@@ -11,6 +11,8 @@
 1. fork this project
 2. modify the link of the above button to your fork url
 3. click the button, you will be redirected to the deploy page
+4. chose `Settings` in `Workers & Pages`, Then chose `Variables` and then chose `Add Variables`, and text **`CUSTOM_DOMAIN`** and your **`custom domain`**, then click `Deploy` button. 
+![customize-your-domain](img/image.png)
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ciiiii/cloudflare-docker-proxy)
 
