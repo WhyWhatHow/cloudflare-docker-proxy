@@ -5,18 +5,22 @@ addEventListener("fetch", (event) => {
 
 const dockerHub = "https://registry-1.docker.io";
 
+// read form enviroment
+const MY_DOMAIN =globalThis.CUSTOM_DOMAIN || "libcuda.so"
+
+// build routes
 const routes = {
   // production
-  "docker.libcuda.so": dockerHub,
-  "quay.libcuda.so": "https://quay.io",
-  "gcr.libcuda.so": "https://gcr.io",
-  "k8s-gcr.libcuda.so": "https://k8s.gcr.io",
-  "k8s.libcuda.so": "https://registry.k8s.io",
-  "ghcr.libcuda.so": "https://ghcr.io",
-  "cloudsmith.libcuda.so": "https://docker.cloudsmith.io",
+  [`docker.${MY_DOMAIN}`]: dockerHub,
+  [`quay.${MY_DOMAIN}`]: "https://quay.io",
+  [`gcr.${MY_DOMAIN}`]: "https://gcr.io",
+  [`k8s-gcr.${MY_DOMAIN}`]: "https://k8s.gcr.io",
+  [`k8s.${MY_DOMAIN}`]: "https://registry.k8s.io",
+  [`ghcr.${MY_DOMAIN}`]: "https://ghcr.io",
+  [`cloudsmith.${MY_DOMAIN}`]: "https://docker.cloudsmith.io",
 
   // staging
-  "docker-staging.libcuda.so": dockerHub,
+  [`docker-staging.${MY_DOMAIN}`]: dockerHub,
 };
 
 function routeByHosts(host) {
